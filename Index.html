@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Polícia Federal | MTA RP</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050b11;
+    color: #f2f2f2;
+    line-height: 1.6;
+}
+
+.top-line {
+    height: 3px;
+    background: #d69a20;
+}
+
+/* HEADER */
+
+.header {
+    height: 82px;
+    background: #060a0f;
+    border-bottom: 1px solid #8d661e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+.brand strong {
+    display: block;
+    font-size: 18px;
+}
+
+.brand span {
+    display: block;
+    color: #dca52e;
+    font-size: 13px;
+}
+
+.badge {
+    width: 55px;
+    height: 55px;
+    border: 2px solid #dca52e;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #dca52e;
+    font-weight: bold;
+    background: #101820;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #eee;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 31px 0;
+    border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+    color: #e3a72e;
+    border-bottom-color: #e3a72e;
+}
+
+.staff-btn {
+    border: 1px solid #343c42;
+    padding: 10px 15px !important;
+    border-radius: 5px;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            #1b2c3b 0,
+            #09131d 42%,
+            #050a10 75%
+        );
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        #050a10 10%,
+        transparent 70%
+    );
+}
+
+.hero-content {
+    width: min(1180px, 92%);
+    margin: auto;
+    position: relative;
+    z-index: 5;
+}
+
+.eyebrow {
+    color: #e0a62c;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: .95;
+    margin-top: 10px;
+}
+
+.hero h1 span {
+    color: #dca32a;
+}
+
+.hero h2 {
+    font-size: 21px;
+    margin: 20px 0 10px;
+}
+
+.hero-text {
+    max-width: 520px;
+    color: #aeb6bd;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid #dca32a;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.primary {
+    background: #dca32a;
+    color: #111;
+}
+
+.secondary {
+    background: transparent;
+    color: white;
+    border-color: #78818a;
+}
+
+.full {
+    width: 100%;
+    text-align: center;
+}
+
+/* CARRO */
+
+.hero-car {
+    position: absolute;
+    right: 0;
+    bottom: 35px;
+    width: 50%;
+    height: 320px;
+    z-index: 2;
+}
+
+.car-shape {
+    position: absolute;
+    right: 5%;
+    bottom: 20px;
+    width: 75%;
+    height: 145px;
+    background: linear-gradient(
+        #283746,
+        #101820
+    );
+    border: 3px solid #374a5b;
+    border-radius: 90px 55px 20px 25px;
+    box-shadow: 0 20px 50px #000;
+}
+
+.window {
+    position: absolute;
+    right: 25%;
+    top: 15px;
+    width: 40%;
+    height: 70px;
+    background: #071019;
+    transform: skew(-15deg);
+    border: 2px solid #526373;
+}
+
+.car-text {
+    position: absolute;
+    right: 20px;
+    top: 65px;
+    text-align: center;
+    color: #dca32a;
+    font-size: 13px;
+}
+
+.wheel {
+    position: absolute;
+    bottom: -35px;
+    width: 72px;
+    height: 72px;
+    background: #05080b;
+    border: 10px solid #303b44;
+    border-radius: 50%;
+}
+
+.w1 {
+    left: 15%;
+}
+
+.w2 {
+    right: 15%;
+}
+
+.light {
+    position: absolute;
+    top: 50px;
+    width: 90px;
+    height: 15px;
+    filter: blur(8px);
+}
+
+.red {
+    right: 32%;
+    background: red;
+}
+
+.blue {
+    right: 24%;
+    background: blue;
+}
+
+/* CARDS */
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: #0d151d;
+    border: 1px solid #27323b;
+    border-radius: 9px;
+    overflow: hidden;
+    margin-top: -30px;
+    position: relative;
+    z-index: 10;
+}
+
+.quick-card {
+    padding: 28px 24px;
+    display: flex;
+    gap: 15px;
+    color: white;
+    text-decoration: none;
+    border-right: 1px solid #27323b;
+}
+
+.quick-card span {
+    font-size: 30px;
+    color: #dda32a;
+}
+
+.quick-card h3 {
+    font-size: 16px;
+}
+
+.quick-card p {
+    font-size: 12px;
+    color: #aab2b9;
+    margin: 5px 0 10px;
+}
+
+.quick-card b {
+    font-size: 11px;
+    color: #dfa72f;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.section-title span {
+    width: 4px;
+    height: 26px;
+    background: #dfa72f;
+}
+
+.section-title h2 {
+    font-size: 21px;
+    text-transform: uppercase;
+}
+
+/* SOBRE */
+
+.about {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+}
+
+.about p {
+    color: #b8c0c7;
+    margin-bottom: 15px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.stats div {
+    background: #0d151d;
+    border: 1px solid #27323b;
+    padding: 20px;
+    text-align: center;
+}
+
+.stats strong {
+    display: block;
+    color: #dfa72f;
+    font-size: 25px;
+}
+
+/* PAINÉIS */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.5fr .8fr;
+    gap: 20px;
+}
+
+.panel,
+.rule,
+.staff-panel {
+    background: #0d151d;
+    border: 1px solid #27323b;
+    border-radius: 8px;
+    padding: 28px;
+}
+
+.news {
+    display: grid;
+    grid-template-columns: 55px 1fr auto;
+    gap: 15px;
+    padding: 17px 0;
+    border-top: 1px solid #253039;
+    align-items: center;
+}
+
+.news-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #8e6925;
+    color: #dfa72f;
+}
+
+.news h3 {
+    font-size: 14px;
+}
+
+.news p {
+    color: #9fa9b1;
+    font-size: 12px;
+}
+
+.news time {
+    font-size: 11px;
+    color: #888;
+}
+
+/* SERVIDOR */
+
+.server-row {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #253039;
+}
+
+.server-row span {
+    color: #dfa72f;
+    font-size: 20px;
+}
+
+.server-row small,
+.server-row b {
+    display: block;
+}
+
+.server-row small {
+    color: #9fa9b1;
+    font-size: 10px;
+}
+
+.server-row b {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.server .btn {
+    margin-top: 20px;
+}
+
+/* REGRAS */
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.rule b {
+    color: #dfa72f;
+}
+
+.rule h3 {
+    margin: 8px 0;
+}
+
+.rule p {
+    font-size: 12px;
+    color: #aeb6bd;
+}
+
+/* HIERARQUIA */
+
+.dark-section {
+    background: #080f16;
+    border-top: 1px solid #151f27;
+    border-bottom: 1px solid #151f27;
+}
+
+.rank-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.rank {
+    background: #0d151d;
+    border: 1px solid #27323b;
+    padding: 22px;
+}
+
+.rank em {
+    color: #dfa72f;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.rank strong {
+    display: block;
+    font-size: 17px;
+}
+
+.rank small {
+    color: #8f99a1;
+}
+
+/* PROCEDIMENTOS */
+
+.procedures {
+    display: grid;
+    gap: 10px;
+}
+
+.procedures details {
+    background: #0d151d;
+    border: 1px solid #27323b;
+    border-radius: 6px;
+    padding: 16px 20px;
+}
+
+.procedures summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.procedures p {
+    color: #aab3ba;
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+/* RECRUTAMENTO */
+
+.recruit {
+    background: linear-gradient(
+        90deg,
+        #0a1118,
+        #111d26,
+        #0a1118
+    );
+    border-top: 1px solid #7f5e20;
+    border-bottom: 1px solid #7f5e20;
+}
+
+.recruit-inner {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.recruit h2 {
+    font-size: 35px;
+}
+
+.recruit h2 span {
+    color: #dfa72f;
+}
+
+.recruit p:not(.eyebrow) {
+    color: #aeb6bd;
+}
+
+/* FOOTER */
+
+footer {
+    background: #03070b;
+    border-top: 1px solid #18232c;
+    padding-top: 55px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-grid h4 {
+    color: #dfa72f;
+    font-size: 12px;
+}
+
+.footer-grid a {
+    display: block;
+    color: #9da6ad;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.footer-grid p {
+    color: #89939b;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #18232c;
+    color: #6e7880;
+    font-size: 11px;
+    padding: 20px;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000b;
+    z-index: 999;
+    place-items: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: grid;
+}
+
+.modal-box {
+    width: min(400px, 100%);
+    background: #0d151d;
+    border: 1px solid #a27422;
+    border-radius: 8px;
+    padding: 30px;
+    position: relative;
+}
+
+.modal-box h2 {
+    margin-bottom: 20px;
+}
+
+.modal-box input {
+    width: 100%;
+    background: #070d13;
+    border: 1px solid #34404a;
+    color: white;
+    padding: 13px;
+    margin: 6px 0;
+    border-radius: 4px;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+
+@media(max-width: 1050px) {
+
+    nav {
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 780px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #070c11;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px 6%;
+        gap: 0;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px 0;
+        border: none;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-car {
+        opacity: .3;
+        width: 90%;
+    }
+
+    .about,
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rules-grid,
+    .rank-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .recruit-inner,
+    .staff-panel {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 50px 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-card {
+        border-right: none;
+        border-bottom: 1px solid #27323b;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 17px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .rules-grid,
+    .rank-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .news {
+        grid-template-columns: 45px 1fr;
+    }
+
+    .news time {
+        display: none;
+    }
+
+    .stats {
+        margin-top: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-line"></div>
+
+<header class="header">
+
+<a href="#inicio" class="brand">
+
+<div class="badge">
+PF
+</div>
+
+<div>
+<strong>POLÍCIA FEDERAL</strong>
+<span>MTA RP</span>
+</div>
+
+</a>
+
+<button class="menu-btn" onclick="menu()">
+☰
+</button>
+
+<nav id="nav">
+
+<a href="#inicio">Início</a>
+<a href="#sobre">Sobre</a>
+<a href="#regras">Regras</a>
+<a href="#hierarquia">Hierarquia</a>
+<a href="#procedimentos">Procedimentos</a>
+<a href="#comunicados">Comunicados</a>
+<a href="#recrutamento">Recrutamento</a>
+
+<a class="staff-btn" href="#staff">
+🔐 Acesso Staff
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- INÍCIO -->
+
+<section id="inicio" class="hero">
+
+<div class="hero-content">
+
+<p class="eyebrow">
+DISCIPLINA • RESPEITO • COMPROMISSO
+</p>
+
+<h1>
+POLÍCIA<br>
+<span>FEDERAL</span>
+</h1>
+
+<h2>
+Proteger, Servir e Cumprir a Lei.
+</h2>
+
+<p class="hero-text">
+A Polícia Federal do nosso servidor MTA RP atua com
+imparcialidade, disciplina e compromisso para garantir
+a ordem e a segurança da cidade.
+</p>
+
+<div class="actions">
+
+<a href="#regras" class="btn primary">
+▣ Regras e Regulamento
+</a>
+
+<a href="#recrutamento" class="btn secondary">
+👥 Como ingressar
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-car">
+
+<div class="light red"></div>
+<div class="light blue"></div>
+
+<div class="car-shape">
+
+<div class="window"></div>
+
+<div class="wheel w1"></div>
+<div class="wheel w2"></div>
+
+<div class="car-text">
+POLÍCIA<br>
+<b>FEDERAL</b>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CARDS -->
+
+<section class="quick-grid container">
+
+<a href="#hierarquia" class="quick-card">
+
+<span>♟</span>
+
+<div>
+<h3>Hierarquia</h3>
+<p>Conheça nossa estrutura hierárquica e patentes.</p>
+<b>VER MAIS →</b>
+</div>
+
+</a>
+
+
+<a href="#regras" class="quick-card">
+
+<span>⚖</span>
+
+<div>
+<h3>Regras</h3>
+<p>Leia todas as regras e regulamentos internos.</p>
+<b>VER MAIS →</b>
+</div>
+
+</a>
+
+
+<a href="#procedimentos" class="quick-card">
+
+<span>▤</span>
+
+<div>
+<h3>Procedimentos</h3>
+<p>Abordagem, prisão, busca e investigação.</p>
+<b>VER MAIS →</b>
+</div>
+
+</a>
+
+
+<a href="#comunicados" class="quick-card">
+
+<span>⚑</span>
+
+<div>
+<h3>Comunicados</h3>
+<p>Avisos e atualizações oficiais.</p>
+<b>VER MAIS →</b>
+</div>
+
+</a>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section id="sobre" class="section container">
+
+<div class="section-title">
+<span></span>
+<h2>Sobre a Corporação</h2>
+</div>
+
+<div class="about">
+
+<div>
+
+<p>
+A Polícia Federal é uma corporação voltada para operações
+de maior complexidade, investigação e manutenção da ordem
+dentro do universo do servidor.
+</p>
+
+<p>
+Nosso objetivo é proporcionar um RP organizado, justo e
+divertido, sempre respeitando as regras gerais da cidade.
+</p>
+
+</div>
+
+<div class="stats">
+
+<div>
+<strong>24/7</strong>
+<span>Atuação</span>
+</div>
+
+<div>
+<strong>100%</strong>
+<span>Compromisso</span>
+</div>
+
+<div>
+<strong>RP</strong>
+<span>Prioridade</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COMUNICADOS -->
+
+<section id="comunicados" class="section container">
+
+<div class="section-title">
+<span></span>
+<h2>Últimos Comunicados</h2>
+</div>
+
+<div class="panel">
+
+<article class="news">
+
+<div class="news-icon">
+01
+</div>
+
+<div>
+<h3>Atualização de Procedimentos</h3>
+<p>
+Novos procedimentos operacionais entram em vigor.
+</p>
+</div>
+
+<time>04/09/2026</time>
+
+</article>
+
+
+<article class="news">
+
+<div class="news-icon">
+02
+</div>
+
+<div>
+<h3>Treinamento Operacional</h3>
+<p>
+Confira os próximos treinamentos obrigatórios.
+</p>
+</div>
+
+<time>03/09/2026</time>
+
+</article>
+
+
+<article class="news">
+
+<div class="news-icon">
+03
+</div>
+
+<div>
+<h3>Novo Recrutamento Aberto</h3>
+<p>
+As inscrições para o processo seletivo estão abertas.
+</p>
+</div>
+
+<time>01/09/2026</time>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- SERVIDOR -->
+
+<section class="section container">
+
+<div class="content-grid">
+
+<div class="panel">
+
+<div class="section-title">
+<span></span>
+<h2>Informações do Servidor</h2>
+</div>
+
+<div class="server-row">
+<span>◉</span>
+<div>
+<small>NOME DO SERVIDOR</small>
+<b>Seu Servidor RP</b>
+</div>
+</div>
+
+<div class="server-row">
+<span>⌁</span>
+<div>
+<small>IP DO SERVIDOR</small>
+<b>mtasa://SEU-IP:22003</b>
+</div>
+</div>
+
+<div class="server-row">
+<span>●</span>
+<div>
+<small>DISCORD</small>
+<b>discord.gg/seuservidor</b>
+</div>
+</div>
+
+<button class="btn primary full" onclick="copiarIP()">
+🎮 Copiar IP
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REGRAS -->
+
+<section id="regras" class="section container">
+
+<div class="section-title">
+<span></span>
+<h2>Regras e Regulamento</h2>
+</div>
+
+<div class="rules-grid">
+
+<div class="rule">
+<b>01</b>
+<h3>Conduta</h3>
+<p>
+Todo agente deve manter postura profissional
+e respeitar jogadores e corporações.
+</p>
+</div>
+
+<div class="rule">
+<b>02</b>
+<h3>Imparcialidade</h3>
+<p>
+É proibido utilizar a autoridade da PF para
+benefício próprio ou perseguição.
+</p>
+</div>
+
+<div class="rule">
+<b>03</b>
+<h3>IC / OOC</h3>
+<p>
+Não utilize informações obtidas fora do personagem
+para favorecer situações de RP.
+</p>
+</div>
+
+<div class="rule">
+<b>04</b>
+<h3>Autoridade</h3>
+<p>
+Prisões e abordagens devem possuir fundamento
+dentro do RP.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HIERARQUIA -->
+
+<section id="hierarquia" class="section dark-section">
+
+<div class="container">
+
+<div class="section-title">
+<span></span>
+<h2>Hierarquia</h2>
+</div>
+
+<div class="rank-grid">
+
+<div class="rank">
+<em>01</em>
+<strong>Diretor-Geral</strong>
+<small>Comando máximo</small>
+</div>
+
+<div class="rank">
+<em>02</em>
+<strong>Diretor</strong>
+<small>Alto comando</small>
+</div>
+
+<div class="rank">
+<em>03</em>
+<strong>Delegado</strong>
+<small>Comando operacional</small>
+</div>
+
+<div class="rank">
+<em>04</em>
+<strong>Agente Especial</strong>
+<small>Operações</small>
+</div>
+
+<div class="rank">
+<em>05</em>
+<strong>Agente Federal</strong>
+<small>Atuação policial</small>
+</div>
+
+<div class="rank">
+<em>06</em>
+<strong>Recruta</strong>
+<small>Formação</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCEDIMENTOS -->
+
+<section id="procedimentos" class="section container">
+
+<div class="section-title">
+<span></span>
+<h2>Procedimentos Operacionais</h2>
+</div>
+
+<div class="procedures">
+
+<details open>
+
+<summary>
+🚓 Abordagem
+</summary>
+
+<p>
+Identifique-se, informe o motivo da abordagem e mantenha
+uma comunicação clara. Siga sempre as regras do servidor.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+🔒 Prisão
+</summary>
+
+<p>
+Realize a prisão somente quando houver fundamento dentro
+do RP e siga o procedimento estabelecido pela corporação.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+🔎 Busca e Apreensão
+</summary>
+
+<p>
+Operações de busca devem respeitar as permissões e
+procedimentos definidos pela administração.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+🕵 Investigação
+</summary>
+
+<p>
+Registre informações relevantes e preserve a qualidade
+do RP durante toda a investigação.
+</p>
+
+</details>
+
+</div>
+
+</section>
+
+
+<!-- RECRUTAMENTO -->
+
+<section id="recrutamento" class="recruit">
+
+<div class="container recruit-inner">
+
+<div>
+
+<p class="eyebrow">
+FAÇA PARTE DA EQUIPE
+</p>
+
+<h2>
+PROTEJA A <span>CIDADE</span>
+</h2>
+
+<p>
+Buscamos jogadores dedicados, responsáveis e
+comprometidos com um RP de qualidade.
+</p>
+
+</div>
+
+<a href="#staff" class="btn primary">
+👤 VER RECRUTAMENTO
+</a>
+
+</div>
+
+</section>
+
+
+<!-- STAFF -->
+
+<section id="staff" class="section container">
+
+<div class="staff-panel">
+
+<div>
+
+<p class="eyebrow">
+ÁREA RESTRITA
+</p>
+
+<h2>
+Acesso Staff
+</h2>
+
+<p>
+Área reservada para membros autorizados.
+</p>
+
+</div>
+
+<button class="btn primary" onclick="abrirLogin()">
+🔐 Entrar
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+
+<div class="brand">
+
+<div class="badge">
+PF
+</div>
+
+<div>
+<strong>POLÍCIA FEDERAL</strong>
+<span>MTA RP</span>
+</div>
+
+</div>
+
+<p>
+Portal oficial da Polícia Federal do seu servidor MTA RP.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>NAVEGAÇÃO</h4>
+
+<a href="#inicio">Início</a>
+<a href="#regras">Regras</a>
+<a href="#hierarquia">Hierarquia</a>
+<a href="#recrutamento">Recrutamento</a>
+
+</div>
+
+
+<div>
+
+<h4>PROCEDIMENTOS</h4>
+
+<a href="#procedimentos">Abordagens</a>
+<a href="#procedimentos">Prisões</a>
+<a href="#procedimentos">Investigação</a>
+
+</div>
+
+
+<div>
+
+<h4>REDES SOCIAIS</h4>
+
+<a href="#">Discord</a>
+<a href="#">YouTube</a>
+<a href="#">Instagram</a>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Polícia Federal MTA RP • Todos os direitos reservados.
